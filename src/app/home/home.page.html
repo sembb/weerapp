@@ -15,9 +15,23 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
+  <div id="searchbar">
     <ion-searchbar (ionChange)="withSearch($event.target.value)"></ion-searchbar>
-    <strong>Het is {{weerdata}}°C in {{city}}</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+  
+<div class='weercontent'>
+  <div class='weerresults'>
+    <strong>Het is {{temp}}°C in {{city}}</strong>
+    <br>
+    <strong>{{algemeneOmschrijving}}</strong>
+  </div>
+
+  <div class='weericon'>
+    <img src={{weerIcon}}>
+    <div class='transparent'></div>
+    <img class='achtergrondfoto' src={{weerBackground}} >
+  </div>
+
+</div>
+
 </ion-content>

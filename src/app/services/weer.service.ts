@@ -13,7 +13,7 @@ export class WeerService {
 
   searchData(searchTerm: string){
     this.city = searchTerm;
-    return this.http.get(`${this.url}?appid=${this.apiKey}&q=${this.city}&units=metric`);
+    return this.http.get(`${this.url}?appid=${this.apiKey}&q=${this.city}&units=metric&lang=nl`);
   }
 
 }
