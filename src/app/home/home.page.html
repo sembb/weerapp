@@ -3,7 +3,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Wat voor weer is het nu in de wereld?
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -21,15 +21,15 @@
   
 <div class='weercontent'>
   <div class='weerresults'>
-    <strong>Het is {{temp}}°C in {{city}}</strong>
+    <strong>{{weerdata['temp']}}</strong>
     <br>
-    <strong>{{algemeneOmschrijving}}</strong>
+    <strong>{{weerdata['algemeneOmschrijving']}}</strong>
   </div>
 
   <div class='weericon'>
-    <img src={{weerIcon}}>
+    <img src="{{weerdata['weerIcon']}}">
     <div class='transparent'></div>
-    <img class='achtergrondfoto' src={{weerBackground}} >
+    <img class='achtergrondfoto' src="{{weerdata['weerBackground']}} ">
   </div>
 
 </div>
