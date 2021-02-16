@@ -7,13 +7,13 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<div [style.left.%]="this.leftOffset[0]" class='raindrop'></div>
-<div [style.left.%]="this.leftOffset[1]" class='raindrop2'></div>
-<div [style.left.%]="this.leftOffset[2]" class='raindrop3'></div>
-<div [style.left.%]="this.leftOffset[3]" class='raindrop4'></div>
-<div [style.left.%]="this.leftOffset[4]" class='raindrop5'></div>
-<div [style.left.%]="this.leftOffset[5]" class='raindrop6'></div>
-<div [style.left.%]="this.leftOffset[6]" class='raindrop7'></div>
+<div [style.left.%]="this.leftOffset[0]" class='rd raindrop'></div>
+<div [style.left.%]="this.leftOffset[1]" class='rd raindrop2'></div>
+<div [style.left.%]="this.leftOffset[2]" class='rd raindrop3'></div>
+<div [style.left.%]="this.leftOffset[3]" class='rd raindrop4'></div>
+<div [style.left.%]="this.leftOffset[4]" class='rd raindrop5'></div>
+<div [style.left.%]="this.leftOffset[5]" class='rd raindrop6'></div>
+<div [style.left.%]="this.leftOffset[6]" class='rd raindrop7'></div>
 <ion-content [fullscreen]="true">
   
   <ion-header collapse="condense">
@@ -23,23 +23,26 @@
   </ion-header>
 
   <div id="searchbar">
-    <ion-searchbar (ionChange)="withSearch($event.target.value)"></ion-searchbar>
-  </div>
-  
-<div class='weercontent'>
-  <div class='weerresults'>
-    <strong>{{weerdata['temp']}}</strong>
-    <br>
-    <strong>{{weerdata['algemeneOmschrijving']}}</strong>
+    <ion-searchbar class="glass" (ionChange)="withSearch($event.target.value)"></ion-searchbar>
   </div>
 
-  <div class='weericon'>
-    <img src="{{weerdata['weerIcon']}}">
-    <div class='transparent'></div>
-    <img class='achtergrondfoto' src="{{weerdata['weerBackground']}} ">
-  </div>
-  
+  <div class='resultwrapper'>
+    <div class='weercontent'>
 
-</div>
+      <div class='weericon'>
+        <img src="{{weerdata['weerIcon']}}">
+        <div class='transparent'></div>
+        <img class='achtergrondfoto' src="{{weerdata['weerBackground']}} ">
+      </div>
+      
+      <div class='weerresults'>
+        <strong>{{weerdata['temp']}}</strong>
+        <br>
+        <strong>{{weerdata['algemeneOmschrijving']}}</strong>
+      </div>
+
+    </div>
+
+  </div>
 
 </ion-content>

@@ -4,7 +4,6 @@ import { createAnimation, Animation } from '@ionic/core';
 import { animationFrame } from 'rxjs/internal/scheduler/animationFrame';
 import { interval } from 'rxjs';
 import { AnimationController } from '@ionic/angular';
-import { clear } from 'console';
 
 
 @Component({
@@ -64,18 +63,22 @@ export class HomePage implements OnInit {
       this.weerdata['weerBackground'] = 'Mist';
     }
     if(this.weerdata['weerBackground'] == "Rain" || this.weerdata['weerBackground'] == "Drizzle"){
+      var ele = document.querySelectorAll<HTMLElement>('.rd');
+      for (var i = 0; i < ele.length; i++ ) {
+        ele[i].style.display = "block";
+    }
       this.rainAnimations();
       this.rainInterval = setInterval(() => {
-        this.leftOffset[0] = this.randomIntFromInterval(0, 100).toString();
-        this.leftOffset[1] = this.randomIntFromInterval(0, 100).toString();
-        this.leftOffset[2] = this.randomIntFromInterval(0, 100).toString();
-        this.leftOffset[3] = this.randomIntFromInterval(0, 100).toString();
-        this.leftOffset[4] = this.randomIntFromInterval(0, 100).toString();
-        this.leftOffset[5] = this.randomIntFromInterval(0, 100).toString();
-        this.leftOffset[6] = this.randomIntFromInterval(0, 100).toString();
+        for(var i = 0; i < 7; i++){
+          this.leftOffset[i] = this.randomIntFromInterval(0, 100).toString();
+        }
       }, 500);
     }else{
-      clearInterval(this.rainInterval)
+      clearInterval(this.rainInterval);
+      var ele = document.querySelectorAll<HTMLElement>('.rd');
+      for (var i = 0; i < ele.length; i++ ) {
+          ele[i].style.display = "none";
+      }
     }
     this.weerdata['weerBackground'] = "assets/images/" + this.weerdata['weerBackground'].toLowerCase() + '.jpg';
   }

@@ -19,7 +19,7 @@
 
 .weerresults{
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .weercontent{
@@ -27,6 +27,25 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  width: fit-content;
+  background-color: #0000003b;
+  margin: 0 auto;
+  padding: 0px 40px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 0px 30px 3px #31ffff3d;
+-moz-box-shadow: 0px 0px 30px 3px #31ffff3d;
+box-shadow: 0px 0px 30px 3px #31ffff3d;
+}
+
+.resultwrapper{
+  margin-top: 20px;
+}
+
+.weercontent .weericon{
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .achtergrondfoto{
@@ -36,6 +55,12 @@
     left: 0;
     top: 0;
     z-index: -9;
+}
+
+.glass{
+  --background: #0000003b;
+  --box-shadow: 0px 0px 30px 3px #31ffff3d;
+  --border-radius: 2px;
 }
 
 .transparent{
