@@ -60,3 +60,12 @@
 #container a {
   text-decoration: none;
 }
+
+.raindrop, .raindrop2, .raindrop3, .raindrop4, .raindrop5, .raindrop6, .raindrop7{
+  width: 2px;
+  z-index: 9;
+  height: 30px;
+  background-color: #448fffa8;
+  position: absolute;
+  left: 20px;
+}

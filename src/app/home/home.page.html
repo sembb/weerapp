@@ -7,8 +7,15 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+<div [style.left.%]="this.leftOffset[0]" class='raindrop'></div>
+<div [style.left.%]="this.leftOffset[1]" class='raindrop2'></div>
+<div [style.left.%]="this.leftOffset[2]" class='raindrop3'></div>
+<div [style.left.%]="this.leftOffset[3]" class='raindrop4'></div>
+<div [style.left.%]="this.leftOffset[4]" class='raindrop5'></div>
+<div [style.left.%]="this.leftOffset[5]" class='raindrop6'></div>
+<div [style.left.%]="this.leftOffset[6]" class='raindrop7'></div>
 <ion-content [fullscreen]="true">
+  
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
@@ -31,6 +38,7 @@
     <div class='transparent'></div>
     <img class='achtergrondfoto' src="{{weerdata['weerBackground']}} ">
   </div>
+  
 
 </div>
 
