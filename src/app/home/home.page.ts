@@ -80,6 +80,11 @@ export class HomePage implements OnInit {
           ele[i].style.display = "none";
       }
     }
+    if(this.weerdata['weerBackground'] == "Clouds"){
+      document.getElementById('cloud').style.display = 'block';
+    }else{
+      document.getElementById('cloud').style.display = 'none';
+    }
     this.weerdata['weerBackground'] = "assets/images/" + this.weerdata['weerBackground'].toLowerCase() + '.jpg';
   }
 
@@ -99,13 +104,11 @@ export class HomePage implements OnInit {
   }
 
   rainAnimations(){
-    this.rainAnimation('.raindrop', 0)
-    this.rainAnimation('.raindrop2', 200)
-    this.rainAnimation('.raindrop3', 400)
-    this.rainAnimation('.raindrop4', 300)
-    this.rainAnimation('.raindrop5', 500)
-    this.rainAnimation('.raindrop6', 100)
-    this.rainAnimation('.raindrop7', 200)
+    var intervals = 0;
+    for(var i = 1; i <= document.getElementsByClassName('rd').length; i++){
+      this.rainAnimation('.raindrop'+i, intervals);
+      intervals += 100;
+    }
   }
 
   randomIntFromInterval(min, max) { // min and max included 
